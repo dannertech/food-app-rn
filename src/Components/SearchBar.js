@@ -2,14 +2,14 @@ import React from 'react';
 import {StyleSheet, View,Text, Image, TextInput} from 'react-native';
 
 
-const SearchBar = () => {
+const SearchBar = (props) => {
     return (
         <View style={styles.searchBarViewStyle}>
             <View >
             <Image source={require('../Images/magnifying-glass-icon.png')} style={styles.imageStyle}/>
             </View>
             <View style={styles.textInputStyle}>
-            <TextInput placeholder='Search for Restaurants'/>
+            <TextInput placeholder='Search for Restaurants' onChangeText={(text) => console.log(text)}/>
             </View>
         </View>
     )
@@ -28,9 +28,11 @@ const styles = StyleSheet.create({
         marginHorizontal: 40,
         marginVertical: 30,
         borderRadius: 20,
+        backgroundColor: 'black'
     },
     textInputStyle: {
         alignSelf: 'center',
+        
     }
 });
 
