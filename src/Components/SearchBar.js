@@ -9,7 +9,10 @@ const SearchBar = (props) => {
             <Image source={require('../Images/magnifying-glass-icon.png')} style={styles.imageStyle}/>
             </View>
             <View style={styles.textInputStyle}>
-            <TextInput placeholder='Search for Restaurants' onChangeText={(text) => console.log(text)}/>
+            <TextInput placeholder='Search for Restaurants' onChangeText={(text) => {
+                props.textChanged(text)
+                
+            }}/>
             </View>
         </View>
     )
@@ -23,12 +26,11 @@ const styles = StyleSheet.create({
     },
     searchBarViewStyle: {
         flexDirection: 'row',
-        borderColor: 'gray',
-        borderWidth: 1,
         marginHorizontal: 40,
         marginVertical: 30,
         borderRadius: 20,
-        backgroundColor: 'gray'
+        marginTop: 50,
+        backgroundColor: 'white'
     },
     textInputStyle: {
         alignSelf: 'center',

@@ -12,7 +12,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Search' screenOptions={{
-        title: 'Restaurant Search'
+        headerShown: false
       }}>
         <Stack.Screen name="Search" component={SearchScreen}/>
         <Stack.Screen name="Details" component={DetailScreen} />
