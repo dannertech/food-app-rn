@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 40,
         marginVertical: 30,
         borderRadius: 20,
-        backgroundColor: 'black'
+        backgroundColor: 'gray'
     },
     textInputStyle: {
         alignSelf: 'center',
