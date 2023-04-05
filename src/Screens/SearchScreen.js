@@ -12,6 +12,8 @@ const SearchScreen = () => {
     const [mediumExpensive, setMediumExpensive] = useState([]);
     const [mostExpensive, setMostExpensive] = useState([]);
 
+    //only do call if term is submitted
+
     //get data
     async function getData(){
         if(term == ''){
@@ -28,7 +30,7 @@ const SearchScreen = () => {
             
         }).catch((error) => console.log(error))
     } else if(term.length >= 4){
-        console.log("here");
+        
         await axios.get('https://api.yelp.com/v3/businesses/search', {
             headers: {
                 'Authorization': 'Bearer XTC1RAyu6yEe8O_mWzXy1T6BRp30m1IMT_Jk_zlPu1YmUeVAMgOppKIcfYONPWS5XdEf-EQ657dFWLYzL2R6ylA3FPyYQM_XzhetjDOpK59vUVGtoVCjbAhbYH4cYXYx'
@@ -66,14 +68,16 @@ function filterData(dataParam){
        getData()
     },[term]);
     return(
-        <View>
+        <View style={{backgroundColor: 'black'}}>
             <SearchBar textChanged={(text) => {
                 setTerm(text)
-                }}/>
+                }}
+                />
             <ScrollView>
-            {leastExpensive.length > 0 ? <FilteredSection title="On a Budget" data={leastExpensive}/> : null}
-            {mediumExpensive.length > 0 ? <FilteredSection title="In Between" data={mediumExpensive}/> : null}
-            {mostExpensive.length > 0 ? <FilteredSection title="Expensive AF" data={mostExpensive}/> : null}
+            {leastExpensive.length > 0 ? <FilteredSection title="Broke But Hungry" data={leastExpensive}/> : null}
+            {mediumExpensive.length > 0 ? <FilteredSection title="Not that Expensive" data={mediumExpensive}/> : null}
+            {mostExpensive.length > 0 ? <FilteredSection title="You Got Your Taxes Huh" data={mostExpensive}/> : null}
+            <Text style={{marginBottom: 100, fontWeight: 'bold', textAlign: 'center', fontSize: 30, color: 'white'}}>Made By @dannertech</Text>
             </ScrollView>
         </View>
     )

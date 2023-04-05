@@ -6,7 +6,7 @@ const FilteredSection = (props) => {
 
     return(
         <View>
-            <Text style={{fontWeight: 'bold', fontSize: 30, marginBottom: 10, marginLeft: 10}}>{props.title}</Text>
+            <Text style={{fontWeight: 'bold', fontSize: 30, marginBottom: 10, marginLeft: 10, color: 'white'}}>{props.title}</Text>
             <FlatList
                 showsHorizontalScrollIndicator={false}
                 horizontal

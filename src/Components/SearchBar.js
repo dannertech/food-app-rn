@@ -11,8 +11,11 @@ const SearchBar = (props) => {
             <View style={styles.textInputStyle}>
             <TextInput placeholder='Search for Restaurants' onChangeText={(text) => {
                 props.textChanged(text)
-                
-            }}/>
+            }}
+            autoCapitalize='none'
+            autoCorrect={false}
+            onEndEditing={(e) => console.log(e.nativeEvent.text)}
+            />
             </View>
         </View>
     )
