@@ -5,7 +5,7 @@ import FilteredSection from '../Components/FilteredSection';
 import axios from 'axios';
 
 
-const SearchScreen = () => {
+const SearchScreen = (props) => {
     const [data, setData] = useState([]);
     const [term, setTerm] = useState('');
     const [leastExpensive, setLeastExpensive] = useState([]);
@@ -74,9 +74,9 @@ function filterData(dataParam){
                 }}
                 />
             <ScrollView>
-            {leastExpensive.length > 0 ? <FilteredSection title="Broke But Hungry" data={leastExpensive}/> : null}
-            {mediumExpensive.length > 0 ? <FilteredSection title="Not that Expensive" data={mediumExpensive}/> : null}
-            {mostExpensive.length > 0 ? <FilteredSection title="You Got Your Taxes Huh" data={mostExpensive}/> : null}
+            {leastExpensive.length > 0 ? <FilteredSection title="Broke But Hungry" data={leastExpensive} navigationProp={props.navigation}/> : null}
+            {mediumExpensive.length > 0 ? <FilteredSection title="Not that Expensive" data={mediumExpensive} navigationProp={props.navigation}/> : null}
+            {mostExpensive.length > 0 ? <FilteredSection title="You Got Your Taxes Huh" data={mostExpensive} navigationProp={props.navigation}/> : null}
             <Text style={{marginBottom: 100, fontWeight: 'bold', textAlign: 'center', fontSize: 30, color: 'white'}}>Made By @dannertech</Text>
             </ScrollView>
         </View>
