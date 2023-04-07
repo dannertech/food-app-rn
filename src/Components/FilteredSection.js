@@ -3,7 +3,7 @@ import {StyleSheet, View, Text, FlatList} from 'react-native';
 import DetailCard from './DetailCard';
 
 const FilteredSection = (props) => {
-   console.log(props);
+ 
     return(
         <View>
             <Text style={{fontWeight: 'bold', fontSize: 30, marginBottom: 10, marginLeft: 10, color: 'white'}}>{props.title}</Text>
@@ -13,7 +13,7 @@ const FilteredSection = (props) => {
                 data={props.data}
                 renderItem={({item}) => {
                     return(
-                        <DetailCard title={item.name} imageSource={item.image_url} rating={item.rating} navigationProp={props.navigationProp}/>
+                        <DetailCard title={item.name} imageSource={item.image_url} rating={item.rating} navigationProp={props.navigationProp} id={item.id}/>
                     )
                 }}
                 keyExtractor={(item) => item.id}

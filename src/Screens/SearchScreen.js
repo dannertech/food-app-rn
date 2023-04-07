@@ -62,13 +62,14 @@ function filterData(dataParam){
     setMostExpensive(mostExpensiveArray);
 
     
+    
 }
     
     useEffect(() => {
        getData()
     },[term]);
     return(
-        <View style={{backgroundColor: 'black'}}>
+        <View style={{backgroundColor: 'black', height: '100%'}}>
             <SearchBar textChanged={(text) => {
                 setTerm(text)
                 }}
